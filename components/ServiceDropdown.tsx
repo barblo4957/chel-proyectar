@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 type ServiceDropdownProps = {
   id: string;
   name: string;
-  options: string[];
+  options: readonly string[];
   defaultValue?: string;
 };
 
