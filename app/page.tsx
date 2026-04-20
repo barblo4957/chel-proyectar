@@ -145,8 +145,8 @@ export default function HomePage() {
               <p className="text-brandMuted">
                 {t.contact.phoneLabel}: +34 614 590 268 | +34 634 118 568
               </p>
-              <p className="text-brandMuted">{t.contact.emailLabel}: Chelchaoui@gmail.com</p>
-              <p className="text-brandMuted">{t.contact.instagramLabel}: @Hichamechaou</p>
+              <p className="text-brandMuted">{t.contact.emailLabel}: chelchaoui@gmail.com</p>
+              <p className="text-brandMuted">{t.contact.instagramLabel}: @hichamechaou</p>
               <a
                 href="https://wa.me/34634590568"
                 target="_blank"

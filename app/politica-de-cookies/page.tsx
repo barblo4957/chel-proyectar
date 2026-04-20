@@ -12,7 +12,7 @@ export default function PoliticaCookiesPage() {
           el navegador mediante localStorage para respetar tus preferencias.
         </p>
         <p>
-          Para mas informacion o ejercicio de derechos, puedes contactar con CHEL PROYECTAR en Chelchaoui@gmail.com.
+          Para mas informacion o ejercicio de derechos, puedes contactar con CHEL PROYECTAR en chelchaoui@gmail.com.
         </p>
       </div>
     </main>

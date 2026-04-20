@@ -9,7 +9,7 @@ export default function AvisoLegalPage() {
         </p>
         <p>
           Responsable: Hichamechaou | Telefono: +34 614 590 268 / +34 634 118 568 | Correo:
-          Chelchaoui@gmail.com.
+          chelchaoui@gmail.com.
         </p>
         <p>
           El acceso y uso de este sitio atribuye la condicion de usuario e implica la aceptacion de estas condiciones de

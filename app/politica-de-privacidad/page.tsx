@@ -13,7 +13,7 @@ export default function PoliticaPrivacidadPage() {
         </p>
         <p>
           Derechos: puedes solicitar acceso, rectificacion, supresion, limitacion, oposicion y portabilidad escribiendo
-          a Chelchaoui@gmail.com.
+          a chelchaoui@gmail.com.
         </p>
       </div>
     </main>
