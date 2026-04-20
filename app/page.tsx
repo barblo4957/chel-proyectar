@@ -1,4 +1,5 @@
 import CookieBanner from '@/components/CookieBanner';
+import ContactForm from '@/components/ContactForm';
 import Navbar from '@/components/Navbar';
 import ScrollReveal from '@/components/ScrollReveal';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -159,68 +160,7 @@ export default function HomePage() {
       <section id="contacto" className="section-shell mt-28">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <ScrollReveal>
-            <form className="card-surface space-y-5 p-6 md:p-8">
-              <h2 className="text-3xl">Solicita tu presupuesto</h2>
-              <div>
-                <label htmlFor="nombre" className="mb-2 block text-sm text-brandMuted">
-                  Nombre
-                </label>
-                <input
-                  id="nombre"
-                  name="nombre"
-                  type="text"
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div>
-                <label htmlFor="telefono" className="mb-2 block text-sm text-brandMuted">
-                  Telefono
-                </label>
-                <input
-                  id="telefono"
-                  name="telefono"
-                  type="tel"
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-                  placeholder="Tu numero"
-                />
-              </div>
-              <div>
-                <label htmlFor="servicio" className="mb-2 block text-sm text-brandMuted">
-                  Tipo de servicio
-                </label>
-                <select
-                  id="servicio"
-                  name="servicio"
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent focus:ring-2"
-                >
-                  <option>Yeso proyectado</option>
-                  <option>Capa fina</option>
-                  <option>Reforma integral</option>
-                  <option>Reparacion y mantenimiento</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="mensaje" className="mb-2 block text-sm text-brandMuted">
-                  Mensaje
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  rows={4}
-                  className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-                  placeholder="Cuentanos brevemente tu proyecto"
-                />
-              </div>
-              <a
-                href="https://wa.me/34614590268?text=Hola%2C%20quiero%20solicitar%20presupuesto%20para%20mi%20proyecto"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex rounded-full bg-brandAccent px-6 py-3 font-semibold text-brandText transition hover:bg-[#5f92b7]"
-              >
-                Enviar por WhatsApp
-              </a>
-            </form>
+            <ContactForm />
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
