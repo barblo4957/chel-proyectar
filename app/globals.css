@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --background: #050d1a;
+  --secondary-bg: #0a1628;
+  --accent: #4a7fa5;
+  --text: #f0ece6;
+  --muted: #c8c4bc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, #12243b 0%, var(--background) 42%);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #6a9bc0 0%, #f0ece6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
