@@ -2,8 +2,11 @@
 
 import { FormEvent } from 'react';
 import ServiceDropdown from '@/components/ServiceDropdown';
+import { useLanguage } from '@/components/LanguageProvider';
 
 export default function ContactForm() {
+  const { t } = useLanguage();
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -13,12 +16,12 @@ export default function ContactForm() {
     const servicio = String(formData.get('servicio') ?? '').trim();
     const mensaje = String(formData.get('mensaje') ?? '').trim();
 
-    const message = `🔧 Nueva solicitud de presupuesto
+    const message = `🔧 ${t.contact.whatsappTemplate.title}
 
-👤 Nombre: ${nombre}
-📞 Teléfono: ${telefono}
-🛠️ Servicio: ${servicio}
-📝 Mensaje: ${mensaje}`;
+👤 ${t.contact.whatsappTemplate.name}: ${nombre}
+📞 ${t.contact.whatsappTemplate.phone}: ${telefono}
+🛠️ ${t.contact.whatsappTemplate.service}: ${servicio}
+📝 ${t.contact.whatsappTemplate.message}: ${mensaje}`;
 
     const url = `https://wa.me/34614590268?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -26,10 +29,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="card-surface space-y-5 p-6 md:p-8">
-      <h2 className="text-3xl">Solicita tu presupuesto</h2>
+      <h2 className="text-3xl">{t.contact.formTitle}</h2>
       <div>
         <label htmlFor="nombre" className="mb-2 block text-sm text-brandMuted">
-          Nombre
+          {t.contact.name}
         </label>
         <input
           id="nombre"
@@ -37,12 +40,12 @@ export default function ContactForm() {
           type="text"
           required
           className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-          placeholder="Tu nombre"
+          placeholder={t.contact.namePlaceholder}
         />
       </div>
       <div>
         <label htmlFor="telefono" className="mb-2 block text-sm text-brandMuted">
-          Telefono
+          {t.contact.phone}
         </label>
         <input
           id="telefono"
@@ -50,23 +53,18 @@ export default function ContactForm() {
           type="tel"
           required
           className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-          placeholder="Tu numero"
+          placeholder={t.contact.phonePlaceholder}
         />
       </div>
       <div>
         <label htmlFor="servicio" className="mb-2 block text-sm text-brandMuted">
-          Tipo de servicio
+          {t.contact.service}
         </label>
-        <ServiceDropdown
-          id="servicio"
-          name="servicio"
-          options={['Yeso proyectado', 'Capa fina', 'Reforma integral', 'Reparacion y mantenimiento']}
-          defaultValue="Yeso proyectado"
-        />
+        <ServiceDropdown id="servicio" name="servicio" options={t.contact.serviceOptions} defaultValue={t.contact.serviceOptions[0]} />
       </div>
       <div>
         <label htmlFor="mensaje" className="mb-2 block text-sm text-brandMuted">
-          Mensaje
+          {t.contact.message}
         </label>
         <textarea
           id="mensaje"
@@ -74,14 +72,14 @@ export default function ContactForm() {
           rows={4}
           required
           className="w-full rounded-xl border border-white/15 bg-[#0a1628] px-4 py-3 text-brandText outline-none ring-brandAccent placeholder:text-brandMuted/70 focus:ring-2"
-          placeholder="Cuentanos brevemente tu proyecto"
+          placeholder={t.contact.messagePlaceholder}
         />
       </div>
       <button
         type="submit"
         className="inline-flex rounded-full bg-brandAccent px-6 py-3 font-semibold text-brandText transition hover:bg-[#5f92b7]"
       >
-        Enviar por WhatsApp
+        {t.contact.submit}
       </button>
     </form>
   );

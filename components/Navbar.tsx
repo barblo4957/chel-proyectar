@@ -2,18 +2,23 @@
 
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Language } from '@/lib/translations';
+import { useLanguage } from '@/components/LanguageProvider';
 
-const navItems = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#sobre-nosotros', label: 'Sobre nosotros' },
-  { href: '#proceso', label: 'Proceso' },
-  { href: '#galeria', label: 'Galeria' },
-  { href: '#contacto', label: 'Contacto' }
-];
+const languageOptions: Language[] = ['es', 'en'];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navItems = [
+    { href: '#servicios', label: t.nav.services },
+    { href: '#sobre-nosotros', label: t.nav.about },
+    { href: '#proceso', label: t.nav.process },
+    { href: '#galeria', label: t.nav.gallery },
+    { href: '#contacto', label: t.nav.contact }
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -61,13 +66,32 @@ export default function Navbar() {
             </li>
           ))}
           <li>
+            <div className="inline-flex rounded-full border border-white/20 p-1">
+              {languageOptions.map((lang) => {
+                const isActive = language === lang;
+                return (
+                  <button
+                    key={lang}
+                    type="button"
+                    onClick={() => setLanguage(lang)}
+                    className={`rounded-full px-3 py-1 text-xs font-semibold uppercase transition ${
+                      isActive ? 'bg-brandAccent text-brandText' : 'text-brandMuted hover:text-brandText'
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                );
+              })}
+            </div>
+          </li>
+          <li>
             <a
               href="https://wa.me/34614590268"
               target="_blank"
               rel="noreferrer"
               className="rounded-full bg-brandAccent px-4 py-2 font-semibold text-brandText transition hover:bg-[#5f92b7]"
             >
-              Pide tu presupuesto
+              {t.nav.cta}
             </a>
           </li>
         </ul>
@@ -76,6 +100,25 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-white/10 bg-[#0a1628]/95 lg:hidden">
           <ul className="section-shell flex flex-col items-center gap-3 py-5 text-center text-brandMuted">
+            <li>
+              <div className="inline-flex rounded-full border border-white/20 p-1">
+                {languageOptions.map((lang) => {
+                  const isActive = language === lang;
+                  return (
+                    <button
+                      key={lang}
+                      type="button"
+                      onClick={() => setLanguage(lang)}
+                      className={`rounded-full px-3 py-1 text-xs font-semibold uppercase transition ${
+                        isActive ? 'bg-brandAccent text-brandText' : 'text-brandMuted hover:text-brandText'
+                      }`}
+                    >
+                      {lang}
+                    </button>
+                  );
+                })}
+              </div>
+            </li>
             {navItems.map((item) => (
               <li key={item.href}>
                 <a
@@ -94,7 +137,7 @@ export default function Navbar() {
                 rel="noreferrer"
                 className="mt-1 inline-flex min-w-[280px] items-center justify-center rounded-full bg-brandAccent px-8 py-3 text-base font-semibold text-brandText"
               >
-                Pide tu presupuesto
+                {t.nav.cta}
               </a>
             </li>
           </ul>
