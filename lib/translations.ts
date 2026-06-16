@@ -64,9 +64,16 @@ export const translations = {
       ]
     },
     gallery: {
-      title: 'Nuestros trabajos',
-      subtitle: 'Ejemplos de acabados y reformas realizadas. Próximamente con fotos reales.',
-      placeholder: 'Foto próximamente'
+      title: 'Nuestra última realización',
+      subtitle:
+        'Selección de 3 imágenes de una obra reciente: yeso proyectado y acabado de capa fina. Resultado uniforme, limpio y listo para pintar.',
+      placeholder: 'Foto',
+      photoAltPrefix: 'Foto',
+      openLightbox: 'Ampliar foto',
+      closeLightbox: 'Cerrar galería',
+      previousPhoto: 'Foto anterior',
+      nextPhoto: 'Foto siguiente',
+      lightboxLabel: 'Vista ampliada de la galería'
     },
     contact: {
       formTitle: 'Solicita tu presupuesto',
@@ -173,9 +180,16 @@ export const translations = {
       ]
     },
     gallery: {
-      title: 'Our work',
-      subtitle: 'Examples of completed finishes and refurbishments. Real photos coming soon.',
-      placeholder: 'Photo coming soon'
+      title: 'Our latest project',
+      subtitle:
+        'A selection of 3 images from a recent job: machine plastering and fine coat finishing. A uniform, clean result ready to paint.',
+      placeholder: 'Photo',
+      photoAltPrefix: 'Photo',
+      openLightbox: 'Enlarge photo',
+      closeLightbox: 'Close gallery',
+      previousPhoto: 'Previous photo',
+      nextPhoto: 'Next photo',
+      lightboxLabel: 'Enlarged gallery view'
     },
     contact: {
       formTitle: 'Request a free quote',

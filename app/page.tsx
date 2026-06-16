@@ -3,6 +3,7 @@
 import CookieBanner from '@/components/CookieBanner';
 import ContactForm from '@/components/ContactForm';
 import Navbar from '@/components/Navbar';
+import GallerySection from '@/components/GallerySection';
 import ScrollReveal from '@/components/ScrollReveal';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { useLanguage } from '@/components/LanguageProvider';
@@ -114,23 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="galeria" className="section-shell mt-28">
-        <ScrollReveal>
-          <h2 className="text-4xl md:text-5xl">{t.gallery.title}</h2>
-          <p className="mt-4 text-brandMuted">{t.gallery.subtitle}</p>
-        </ScrollReveal>
-        <div className="mt-8 columns-1 gap-4 sm:columns-2 lg:columns-3">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <ScrollReveal key={item} className="mb-4 break-inside-avoid">
-              <div className={`card-surface p-4 ${item % 2 === 0 ? 'h-56' : 'h-72'}`}>
-                <div className="flex h-full items-center justify-center rounded-xl border border-dashed border-white/20 bg-[#0a1628] text-sm text-brandMuted">
-                  {t.gallery.placeholder} {item}
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
+      <GallerySection />
 
       <section id="contacto" className="section-shell mt-28">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
