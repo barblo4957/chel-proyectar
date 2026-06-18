@@ -17,7 +17,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'CHEL PROYECTAR | Yeso Proyectado y Capa Fina en España',
     description:
-      'Servicio profesional de yeso proyectado, acabados de capa fina y reformas integrales con garantia.',
+      'Servicio profesional de yeso proyectado, acabados de capa fina y reformas integrales con garantía.',
+    url: 'https://www.chelproyectar.es',
+    siteName: 'CHEL PROYECTAR',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'CHEL PROYECTAR' }],
     locale: 'es_ES',
     type: 'website'
   }
